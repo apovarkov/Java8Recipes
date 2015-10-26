@@ -31,6 +31,9 @@ public class HelloWorld {
             }
         }
 
+        LOG.log(Level.INFO, "System variables are: " + System.getenv());
+        LOG.log(Level.INFO, "User home is: " + System.getenv("HOME"));
+
 
         String numberAsString;
         boolean isNumber = false;
