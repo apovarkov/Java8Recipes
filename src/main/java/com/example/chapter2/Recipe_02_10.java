@@ -13,7 +13,7 @@ import java.time.LocalDate;
 /**
  * Created by apovarkov on 02.12.15.
  */
-public class Recipe02_10 extends Application {
+public class Recipe_02_10 extends Application {
     private Label dateLabel;
     private DatePicker datePicker;
 
