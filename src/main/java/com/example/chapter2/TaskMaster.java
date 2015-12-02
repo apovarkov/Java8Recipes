@@ -1,7 +1,8 @@
 package com.example.chapter2;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
+import com.example.chapter2.annotations.Role;
+import com.example.chapter2.annotations.Roles;
+import com.example.chapter2.workers.Worker;
 
 /**
  * Created by apovarkov on 02.12.15.

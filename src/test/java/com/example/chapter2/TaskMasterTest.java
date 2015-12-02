@@ -1,5 +1,9 @@
 package com.example.chapter2;
 
+import com.example.chapter2.workers.AuthorWorker;
+import com.example.chapter2.workers.DirectorWorker;
+import com.example.chapter2.workers.QAWorker;
+import com.example.chapter2.workers.Worker;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
