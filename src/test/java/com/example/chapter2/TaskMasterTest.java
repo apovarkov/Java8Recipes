@@ -28,6 +28,12 @@ public class TaskMasterTest extends TestCase {
         assertFalse(taskMaster.assignWork(worker));
     }
 
+    @Test
+    public void testAssignWorkDirector() {
+        Worker worker = new DirectorWorker();
+        assertTrue(taskMaster.assignWork(worker));
+    }
+
     @After
     public void tesrDown() {
         taskMaster = null;
