@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 
 /**
  * Created by apovarkov on 07.12.15.
