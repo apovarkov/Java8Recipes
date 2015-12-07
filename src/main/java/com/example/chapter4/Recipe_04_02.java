@@ -18,4 +18,9 @@ public class Recipe_04_02 {
         NumberFormat numberFormatter = new DecimalFormat(DECIMAL_PATTERN, formatSymbols);
         return numberFormatter.format(myDouble);
     }
+
+    public static String formatDollars(double value) {
+        NumberFormat dollars = NumberFormat.getCurrencyInstance(Locale.US);
+        return dollars.format(value);
+    }
 }
