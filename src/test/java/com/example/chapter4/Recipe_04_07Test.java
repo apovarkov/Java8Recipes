@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.text.DateFormat;
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -16,7 +17,7 @@ public class Recipe_04_07Test extends TestCase {
 
     @Test
     public void testGetCurrentDate() {
-        LocalDate localDate = LocalDate.of(2015, 12, 21);
+        LocalDate localDate = LocalDate.of(2015, Month.DECEMBER, 21);
         assertEquals(localDate, Recipe_04_07.getCurrentDate(SAMPLE_DATE, DateTimeFormatter.BASIC_ISO_DATE));
     }
 }
