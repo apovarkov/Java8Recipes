@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by apovarkov on 28.01.16.
  */
 public class MySingleton implements Serializable {
-    private static MySingleton instance;
+    private static volatile MySingleton instance;
 
     private MySingleton() {
         super();
