@@ -28,7 +28,6 @@ public class Recipe_04_13Test extends TestCase {
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
         LocalDate anotherDate = LocalDate.of(2015, 12, 12);
         ZonedDateTime anotherDateTime = ZonedDateTime.of(anotherDate, LocalTime.of(12, 12), zonedDateTime.getZone());
-
         assertTrue(zonedDateTime.compareTo(anotherDateTime) > 0);
     }
 
