@@ -21,4 +21,8 @@ public class MySingleton implements Serializable {
             return instance;
         }
     }
+
+    protected Object readResolve(){
+        return instance;
+    }
 }
