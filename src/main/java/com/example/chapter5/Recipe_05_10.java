@@ -9,6 +9,8 @@ public class Recipe_05_10 implements Cloneable, Serializable {
     private String name;
     private String city;
 
+    private Recipe_05_10 parent;
+
     public String getName() {
         return name;
     }
@@ -23,6 +25,14 @@ public class Recipe_05_10 implements Cloneable, Serializable {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Recipe_05_10 getParent() {
+        return parent;
+    }
+
+    public void setParent(Recipe_05_10 parent) {
+        this.parent = parent;
     }
 
     public Object clone() {
@@ -63,7 +73,8 @@ public class Recipe_05_10 implements Cloneable, Serializable {
         Recipe_05_10 that = (Recipe_05_10) o;
 
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        return city != null ? city.equals(that.city) : that.city == null;
+        if (city != null ? !city.equals(that.city) : that.city != null) return false;
+        return parent != null ? parent.equals(that.parent) : that.parent == null;
 
     }
 
@@ -71,6 +82,7 @@ public class Recipe_05_10 implements Cloneable, Serializable {
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (city != null ? city.hashCode() : 0);
+        result = 31 * result + (parent != null ? parent.hashCode() : 0);
         return result;
     }
 }
