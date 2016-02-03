@@ -9,9 +9,9 @@ import org.junit.Test;
  * Created by apovarkov on 03.02.16.
  */
 public class Recipe_05_10Test extends TestCase {
-    public static final String CITY = "Minsk";
-    public static final String NAME = "Aleksey";
-    public static final String ANOTHER_NAME = "Alexander";
+    private static final String CITY = "Minsk";
+    private static final String NAME = "Aleksey";
+    private static final String ANOTHER_NAME = "Alexander";
     private Recipe_05_10 testObject;
 
     @Before
