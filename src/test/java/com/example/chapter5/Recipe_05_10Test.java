@@ -31,6 +31,7 @@ public class Recipe_05_10Test extends TestCase {
         assertFalse(deepClone == shallowClone);
         assertEquals(testObject, deepClone);
         assertEquals(testObject, shallowClone);
+        assertEquals(deepClone, shallowClone);
 
     }
 
@@ -47,6 +48,7 @@ public class Recipe_05_10Test extends TestCase {
         assertFalse(deepClone == shallowClone);
         assertFalse(testObject.equals(deepClone));
         assertFalse(testObject.equals(shallowClone));
+        assertEquals(deepClone, shallowClone);
 
     }
 
