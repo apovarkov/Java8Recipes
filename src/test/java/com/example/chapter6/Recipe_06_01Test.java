@@ -14,7 +14,7 @@ import java.io.PrintStream;
  */
 public class Recipe_06_01Test extends TestCase {
 
-    public static final String EXPECTATION = "Hello Lambda\n";
+    public static final String EXPECTATION = "Java8Tester Lambda\n";
     private Recipe_06_01.HelloType helloLambda;
     private Recipe_06_01.HelloType helloAnotherLambda;
 
@@ -29,9 +29,9 @@ public class Recipe_06_01Test extends TestCase {
         // to the helloLambda variable.
         helloLambda =
                 (String text) -> {
-                    System.out.println("Hello " + text);
+                    System.out.println("Java8Tester " + text);
                 };
-        helloAnotherLambda = text -> System.out.println("Hello " + text);
+        helloAnotherLambda = text -> System.out.println("Java8Tester " + text);
 
         System.setOut(new PrintStream(outContent));
         System.setErr(new PrintStream(errContent));

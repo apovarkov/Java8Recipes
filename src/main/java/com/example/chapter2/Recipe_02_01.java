@@ -19,7 +19,7 @@ public class Recipe_02_01 extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Hello lambda");
+        primaryStage.setTitle("Java8Tester lambda");
         Scene scene = new Scene(root, 300, 250 );
         Button btn = new Button();
         Label message = new Label();

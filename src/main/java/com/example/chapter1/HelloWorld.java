@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Hello world!
+ * Java8Tester world!
  */
 public class HelloWorld {
     private static final Logger LOG = Logger.getLogger(String.valueOf(HelloWorld.class));
@@ -18,7 +18,7 @@ public class HelloWorld {
      * @param args - double value
      */
     public static void main(String[] args) {
-        LOG.log(Level.INFO, "Hello World!");
+        LOG.log(Level.INFO, "Java8Tester World!");
 
         if (args.length > 1) {
             try {

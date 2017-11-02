@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple HelloWorld.
  */
-public class HelloWorldTest
+public class Java8TesterWorldTest
     extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ public class HelloWorldTest
      *
      * @param testName name of the test case
      */
-    public HelloWorldTest(String testName )
+    public Java8TesterWorldTest(String testName )
     {
         super( testName );
     }
@@ -25,7 +25,7 @@ public class HelloWorldTest
      */
     public static Test suite()
     {
-        return new TestSuite( HelloWorldTest.class );
+        return new TestSuite( Java8TesterWorldTest.class );
     }
 
     /**
