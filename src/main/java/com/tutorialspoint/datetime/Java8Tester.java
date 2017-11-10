@@ -1,18 +1,30 @@
 package com.tutorialspoint.datetime;
 
+import java.time.DayOfWeek;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
 
 public class Java8Tester {
 
     public static void main(String args[]) {
         Java8Tester java8tester = new Java8Tester();
 //        java8tester.testLocalDateTime();
-        java8tester.testZonedDateTime();
+//        java8tester.testZonedDateTime();
+//        java8tester.testChromoUnits();
+//        java8tester.testPeriod();
+//        java8tester.testDuration();
+//        java8tester.testAdjusters();
+        java8tester.testBackwardCompatability();
     }
 
     public void testLocalDateTime() {
@@ -55,5 +67,82 @@ public class Java8Tester {
 
         ZoneId currentZone = ZoneId.systemDefault();
         System.out.println("CurrentZone: " + currentZone);
+    }
+
+    public void testChromoUnits() {
+        //Get the current date
+        LocalDate today = LocalDate.now();
+        System.out.println("Current date: " + today);
+
+        //add 1 week to the current date
+        LocalDate nextWeek = today.plus(1, ChronoUnit.WEEKS);
+        System.out.println("Next week: " + nextWeek);
+
+        //add 1 month to the current date
+        LocalDate nextMonth = today.plus(1, ChronoUnit.MONTHS);
+        System.out.println("Next month: " + nextMonth);
+
+        //add 1 year to the current date
+        LocalDate nextYear = today.plus(1, ChronoUnit.YEARS);
+        System.out.println("Next year: " + nextYear);
+
+        //add 10 years to the current date
+        LocalDate nextDecade = today.plus(1, ChronoUnit.DECADES);
+        System.out.println("Date after ten year: " + nextDecade);
+    }
+
+    public void testPeriod() {
+        //Get the current date
+        LocalDate date1 = LocalDate.now();
+        System.out.println("Current date: " + date1);
+
+        //add 1 month to the current date
+        LocalDate date2 = date1.plus(1, ChronoUnit.MONTHS);
+        System.out.println("Next month: " + date2);
+
+        Period period = Period.between(date2, date1);
+        System.out.println("Period: " + period);
+    }
+
+    public void testDuration() {
+        LocalTime time1 = LocalTime.now();
+        Duration twoHours = Duration.ofHours(2);
+
+        LocalTime time2 = time1.plus(twoHours);
+        Duration duration = Duration.between(time1, time2);
+
+        System.out.println("Duration: " + duration);
+    }
+
+    public void testAdjusters() {
+        //Get the current date
+        LocalDate date1 = LocalDate.now();
+        System.out.println("Current date: " + date1);
+
+        //get the next tuesday
+        LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+        System.out.println("Next Tuesday on : " + nextTuesday);
+
+        //get the second saturday of next month
+        LocalDate firstInYear = LocalDate.of(date1.getYear(), date1.getMonth(), 1);
+        LocalDate secondSaturday = firstInYear.with(TemporalAdjusters.nextOrSame(
+                DayOfWeek.SATURDAY)).with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
+        System.out.println("Second Saturday on : " + secondSaturday);
+    }
+
+    public void testBackwardCompatability() {
+        //Get the current date
+        Date currentDate = new Date();
+        System.out.println("Current date: " + currentDate);
+
+        //Get the instant of current date in terms of milliseconds
+        Instant now = currentDate.toInstant();
+        ZoneId currentZone = ZoneId.systemDefault();
+
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
+        System.out.println("Local date: " + localDateTime);
+
+        ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
+        System.out.println("Zoned date: " + zonedDateTime);
     }
 }
